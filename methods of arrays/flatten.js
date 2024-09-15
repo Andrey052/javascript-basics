@@ -6,4 +6,10 @@
 * */
 function flatten(arr) {
     // Your code
+    return arr.flat(Infinity);
 }
+
+/*
+метод flat(Infinity) разворачивает массив на всех уровнях вложенности, 
+независимо от того, сколько их.
+*/

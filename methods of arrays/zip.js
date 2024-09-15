@@ -6,4 +6,23 @@
  * */
 function zip(arr1, arr2) {
     // Your code
+    const result = [];
+    const minLength = Math.min(arr1.length, arr2.length);
+
+    for (let i = 0; i < minLength; i++) {
+        result.push([arr1[i], arr2[i]]);
+    }
+
+    return result;
 }
+
+/*
+Math.min(arr1.length, arr2.length) — определяем длину самого короткого 
+массива, чтобы не выйти за его пределы.
+
+Цикл — проходим по массивам и для каждого индекса создаём подмассив, 
+состоящий из элементов с одинаковыми индексами.
+
+result.push([arr1[i], arr2[i]]) — добавляем подмассивы в результирующий 
+массив.
+*/

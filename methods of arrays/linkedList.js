@@ -29,4 +29,42 @@
  */
 function createList(arr) {
     // Your code
+    if (arr.length === 0) {
+      return null;
+  }
+
+    let head = { value: arr[0], next: null };
+  let current = head;
+  
+    for (let i = 1; i < arr.length; i++) {      
+      current.next = { value: arr[i], next: null };
+      current = current.next;
+  }
+  
+  return head;
 }
+
+/*
+if (arr.length === 0) — если массив пустой, сразу возвращаем null, так 
+как список не может быть создан.
+
+let head = { value: arr[0], next: null }; — создаем первый узел, его 
+значение — это первый элемент массива, а его поле next указывает на null, 
+так как пока это единственный узел.
+
+let current = head; — создаем переменную current, которая будет 
+отслеживать текущий узел, чтобы мы могли к нему привязывать новые узлы.
+
+Цикл for (let i = 1; i < arr.length; i++) — начинаем со второго элемента 
+массива, на каждом шаге создаем новый узел и привязываем его к предыдущему
+через поле next.
+
+current.next = { value: arr[i], next: null }; — создаем новый узел и 
+привязываем его к предыдущему узлу.
+
+current = current.next; — обновляем current, чтобы он указывал на 
+последний созданный узел.
+
+return head; — возвращаем голову списка, которая хранит ссылку на весь 
+связный список.
+*/

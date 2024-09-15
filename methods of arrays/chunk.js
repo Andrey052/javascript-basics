@@ -4,4 +4,30 @@
  * */
 function chunk(arr, size) {
     // Your code
+    const result = [];
+        
+    for (let i = 0; i < arr.length; i += size) {        
+        const chunk = arr.slice(i, i + size);
+        result.push(chunk);
+    }
+    
+    return result;
 }
+
+/*
+Пояснение:
+const result = [] — создаем новый пустой массив, в который будем 
+добавлять подмассивы.
+
+for (let i = 0; i < arr.length; i += size) — используем цикл с шагом size.
+Это позволяет нам "двигаться" по массиву с интервалом size.
+
+arr.slice(i, i + size) — метод slice возвращает новый массив, начиная с 
+индекса i и заканчивая индексом i + size (не включая его). Если элементов 
+не хватает, он просто вернет все оставшиеся.
+
+result.push(chunk) — добавляем каждый срез массива в результирующий массив
+result.
+
+return result — возвращаем итоговый массив с подмассивами.
+*/
